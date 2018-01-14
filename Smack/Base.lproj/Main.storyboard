@@ -132,7 +132,7 @@
                                 <rect key="frame" x="0.0" y="125" width="375" height="427"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="UW6-dW-Tte">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="UW6-dW-Tte">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UW6-dW-Tte" id="Uyd-yS-nJf">
@@ -233,7 +233,7 @@
                                     <action selector="closePressed:" destination="3TC-xb-lSH" eventType="touchUpInside" id="LuP-4R-vrM"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q7e-1L-TzV">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q7e-1L-TzV" customClass="RoundedButton" customModule="Smack" customModuleProvider="target">
                                 <rect key="frame" x="62" y="294" width="250" height="50"/>
                                 <color key="backgroundColor" red="0.35686274509999999" green="0.62352941179999999" blue="0.79607843140000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -244,6 +244,11 @@
                                 <state key="normal" title="Login">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aBn-28-0gR">
                                 <rect key="frame" x="62.5" y="344" width="250" height="20"/>
@@ -348,7 +353,7 @@
                                     <action selector="closePressed:" destination="leT-vM-yJ6" eventType="touchUpInside" id="WjA-zp-1LN"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dD4-f7-4JA">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dD4-f7-4JA" customClass="RoundedButton" customModule="Smack" customModuleProvider="target">
                                 <rect key="frame" x="62" y="597" width="250" height="50"/>
                                 <color key="backgroundColor" red="0.35686274509999999" green="0.62352941179999999" blue="0.79607843140000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -356,9 +361,17 @@
                                     <constraint firstAttribute="height" constant="50" id="hEt-la-3Iz"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
-                                <state key="normal" title="Login">
+                                <state key="normal" title="Create Account">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="createAccntPressed:" destination="leT-vM-yJ6" eventType="touchUpInside" id="4Hr-bU-Pgn"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="pDW-VO-uP1">
                                 <rect key="frame" x="62" y="123" width="250" height="136"/>
@@ -428,6 +441,7 @@
                                 </state>
                                 <connections>
                                     <action selector="createAccntBtnPressed:" destination="3TC-xb-lSH" eventType="touchUpInside" id="IO3-gd-DQx"/>
+                                    <action selector="pickAvatarPressed:" destination="leT-vM-yJ6" eventType="touchUpInside" id="fxa-tT-Okz"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="smackProfileIcon" translatesAutoresizingMaskIntoConstraints="NO" id="QFJ-Xb-qb6">
@@ -450,6 +464,7 @@
                                 </state>
                                 <connections>
                                     <action selector="createAccntBtnPressed:" destination="3TC-xb-lSH" eventType="touchUpInside" id="wGO-ef-dAl"/>
+                                    <action selector="pickBgColorPressed:" destination="leT-vM-yJ6" eventType="touchUpInside" id="fPz-sN-SQF"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -473,6 +488,10 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="emailTxt" destination="pNx-dd-gIf" id="bh7-j5-ITp"/>
+                        <outlet property="passtext" destination="gsI-zQ-RUT" id="bqo-qT-tnu"/>
+                        <outlet property="userImg" destination="QFJ-Xb-qb6" id="jYE-vU-cHl"/>
+                        <outlet property="usernameTxt" destination="LaF-Av-Y6N" id="23K-bd-DXH"/>
                         <segue destination="thE-3F-m2f" kind="unwind" identifier="unwindToChannel" unwindAction="prepareForUnwindWithSegue:" id="yhL-ow-WLj"/>
                     </connections>
                 </viewController>
