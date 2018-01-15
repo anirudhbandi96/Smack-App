@@ -29,12 +29,7 @@ class CreateAccountVC: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-    @IBAction func pickBgColorPressed(_ sender: Any) {
-        
-    }
-    @IBAction func pickAvatarPressed(_ sender: Any) {
-        
-    }
+    
     @IBAction func createAccntPressed(_ sender: Any) {
         
         guard let name = usernameTxt.text, usernameTxt.text != "" else { return }
@@ -56,6 +51,17 @@ class CreateAccountVC: UIViewController {
             }
         }
         
+        
+    }
+    
+    @IBAction func pickBgColorPressed(_ sender: Any) {
+        
+        
+        
+    }
+    @IBAction func pickAvatarPressed(_ sender: Any) {
+        
+        performSegue(withIdentifier: TO_AVATAR_PICKER, sender: nil)
         
     }
     
