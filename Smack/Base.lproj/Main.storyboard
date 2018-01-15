@@ -214,7 +214,7 @@
                                 <rect key="frame" x="281" y="83" width="22" height="22"/>
                                 <state key="normal" image="addChannelButton"/>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menuProfileIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Cau-FW-30L">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menuProfileIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Cau-FW-30L" customClass="CircleImage" customModule="Smack" customModuleProvider="target">
                                 <rect key="frame" x="16" y="572" width="75" height="75"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="75" id="EUb-lu-re3"/>
@@ -537,7 +537,7 @@
                                     <action selector="pickAvatarPressed:" destination="leT-vM-yJ6" eventType="touchUpInside" id="fxa-tT-Okz"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="smackProfileIcon" translatesAutoresizingMaskIntoConstraints="NO" id="QFJ-Xb-qb6">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="smackProfileIcon" translatesAutoresizingMaskIntoConstraints="NO" id="QFJ-Xb-qb6" customClass="CircleImage" customModule="Smack" customModuleProvider="target">
                                 <rect key="frame" x="137" y="299" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="chg-xe-LmZ"/>
@@ -560,6 +560,10 @@
                                     <action selector="pickBgColorPressed:" destination="leT-vM-yJ6" eventType="touchUpInside" id="fPz-sN-SQF"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="QCg-70-dhy">
+                                <rect key="frame" x="169" y="215" width="37" height="37"/>
+                                <color key="color" red="0.25882352939999997" green="0.3294117647" blue="0.72549019609999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -567,6 +571,7 @@
                             <constraint firstItem="VV6-Br-iIa" firstAttribute="top" secondItem="QFJ-Xb-qb6" secondAttribute="top" id="6Na-6c-GWY"/>
                             <constraint firstItem="Zji-Xw-DvJ" firstAttribute="top" secondItem="VV6-Br-iIa" secondAttribute="bottom" constant="4" id="8vR-Tc-EQk"/>
                             <constraint firstItem="Eap-Aw-s1D" firstAttribute="top" secondItem="ZaF-s9-ufj" secondAttribute="bottom" constant="8" id="BuX-C5-yBy"/>
+                            <constraint firstItem="QCg-70-dhy" firstAttribute="centerY" secondItem="C5k-fv-EW1" secondAttribute="centerY" constant="-100" id="K7G-pT-SZN"/>
                             <constraint firstItem="Zji-Xw-DvJ" firstAttribute="centerX" secondItem="C5k-fv-EW1" secondAttribute="centerX" id="NIR-qU-Qcp"/>
                             <constraint firstItem="VV6-Br-iIa" firstAttribute="centerX" secondItem="C5k-fv-EW1" secondAttribute="centerX" id="PhC-B7-2o7"/>
                             <constraint firstItem="QFJ-Xb-qb6" firstAttribute="centerX" secondItem="C5k-fv-EW1" secondAttribute="centerX" id="Xkk-Q8-Udj"/>
@@ -577,12 +582,14 @@
                             <constraint firstItem="aJq-jf-DiA" firstAttribute="centerX" secondItem="C5k-fv-EW1" secondAttribute="centerX" id="gvw-eF-Xbs"/>
                             <constraint firstItem="aJq-jf-DiA" firstAttribute="top" secondItem="ZaF-s9-ufj" secondAttribute="bottom" constant="40" id="lUe-7E-g5S"/>
                             <constraint firstItem="pDW-VO-uP1" firstAttribute="centerX" secondItem="C5k-fv-EW1" secondAttribute="centerX" id="m06-mI-QMk"/>
+                            <constraint firstItem="QCg-70-dhy" firstAttribute="centerX" secondItem="C5k-fv-EW1" secondAttribute="centerX" id="sJF-me-0am"/>
                             <constraint firstItem="pDW-VO-uP1" firstAttribute="top" secondItem="aJq-jf-DiA" secondAttribute="bottom" constant="40" id="v7b-er-Rde"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="emailTxt" destination="pNx-dd-gIf" id="bh7-j5-ITp"/>
                         <outlet property="passtext" destination="gsI-zQ-RUT" id="bqo-qT-tnu"/>
+                        <outlet property="spinner" destination="QCg-70-dhy" id="Kgx-n6-fxX"/>
                         <outlet property="userImg" destination="QFJ-Xb-qb6" id="jYE-vU-cHl"/>
                         <outlet property="usernameTxt" destination="LaF-Av-Y6N" id="23K-bd-DXH"/>
                         <segue destination="thE-3F-m2f" kind="unwind" identifier="unwindToChannel" unwindAction="prepareForUnwindWithSegue:" id="yhL-ow-WLj"/>

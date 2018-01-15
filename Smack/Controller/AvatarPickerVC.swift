@@ -57,7 +57,6 @@ class AvatarPickerVC: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if avatarType == .dark{
-            print("yes")
             UserDataService.instance.setAvatarName(name: "dark\(indexPath.item)")
         }else{
             UserDataService.instance.setAvatarName(name: "light\(indexPath.item)")

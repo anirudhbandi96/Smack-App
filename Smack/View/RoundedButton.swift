@@ -19,7 +19,6 @@ class RoundedButton: UIButton {
     }
     
     override func awakeFromNib() {
-        print("awake from nib")
         self.setupView()
     }
     
@@ -28,7 +27,6 @@ class RoundedButton: UIButton {
             }
     
     override func prepareForInterfaceBuilder() {
-        print("designable  object created!!")
         super.prepareForInterfaceBuilder()
         self.setupView()
 
