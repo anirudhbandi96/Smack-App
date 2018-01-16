@@ -8,13 +8,15 @@
 
 import UIKit
 
-class ChannelVC: UIViewController {
+class ChannelVC: UIViewController, UITableViewDataSource , UITableViewDelegate {
     
     
     //Outlets
 
     @IBOutlet weak var userImg: CircleImage!
     @IBOutlet weak var loginBtn: UIButton!
+    @IBOutlet weak var tableView: UITableView!
+    
     @IBAction func prepareForUnwind(segue: UIStoryboardSegue) {
         
         
@@ -25,6 +27,9 @@ class ChannelVC: UIViewController {
         super.viewDidLoad()
         self.revealViewController().rearViewRevealWidth = self.view.frame.width - 60
         NotificationCenter.default.addObserver(self, selector: #selector(ChannelVC.userDataDidChange(_:)), name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
+        
+        tableView.dataSource = self
+        tableView.delegate = self
 
     }
     
@@ -32,6 +37,20 @@ class ChannelVC: UIViewController {
         if AuthService.instance.isLoggedIn {
             setupUserInfo()
         }
+    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return MessageService.instance.channels.count
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "channelCell", for: indexPath) as? ChannelCell{
+            cell.configureCell(channel: MessageService.instance.channels[indexPath.row])
+            
+            return cell
+        }
+        return ChannelCell()
+    }
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
     }
     
     @objc func userDataDidChange(_ notif: Notification){
@@ -52,7 +71,15 @@ class ChannelVC: UIViewController {
             userImg.backgroundColor = UIColor.clear
         }
     }
-
+    
+    
+    @IBAction func addChanel(_ sender: Any) {
+        
+        let add = AddChannelVC()
+        add.modalPresentationStyle = .custom
+        present(add, animated: true, completion: nil)
+    }
+    
     @IBAction func loginBtnPressed(_ sender: Any) {
         if AuthService.instance.isLoggedIn {
             //Show Profile Page
