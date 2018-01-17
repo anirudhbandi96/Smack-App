@@ -30,6 +30,12 @@ class ChannelVC: UIViewController, UITableViewDataSource , UITableViewDelegate {
         
         tableView.dataSource = self
         tableView.delegate = self
+        
+        SocketService.instance.getChannel { (success) in
+            if success {
+                self.tableView.reloadData()
+            }
+        }
 
     }
     
