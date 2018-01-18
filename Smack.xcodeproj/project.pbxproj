@@ -32,6 +32,9 @@
 		2EC6CD1E2009189900601848 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2EC6CD1C2009189900601848 /* LaunchScreen.storyboard */; };
 		2EC6CD2920091EA100601848 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EC6CD2720091EA100601848 /* SWRevealViewController.m */; };
 		2EDC6FAC200EF5CA000DCD5F /* SocketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDC6FAB200EF5CA000DCD5F /* SocketService.swift */; };
+		2EDC6FAE20105517000DCD5F /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDC6FAD20105517000DCD5F /* Message.swift */; };
+		2EDC6FB02010612F000DCD5F /* KeyboardBoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDC6FAF2010612E000DCD5F /* KeyboardBoundView.swift */; };
+		2EDC6FB220106398000DCD5F /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDC6FB120106398000DCD5F /* MessageCell.swift */; };
 		9358509D4D480C1A8DD05113 /* Pods_Smack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36B0B056003B8546C518D205 /* Pods_Smack.framework */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +68,9 @@
 		2EC6CD2720091EA100601848 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		2EC6CD2820091EA100601848 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		2EDC6FAB200EF5CA000DCD5F /* SocketService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketService.swift; sourceTree = "<group>"; };
+		2EDC6FAD20105517000DCD5F /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		2EDC6FAF2010612E000DCD5F /* KeyboardBoundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardBoundView.swift; sourceTree = "<group>"; };
+		2EDC6FB120106398000DCD5F /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
 		36B0B056003B8546C518D205 /* Pods_Smack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Smack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		859D965ED4A8A80663753611 /* Pods-Smack.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smack.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Smack/Pods-Smack.debug.xcconfig"; sourceTree = "<group>"; };
 		E1714C8EAEDC07A15803DD38 /* Pods-Smack.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smack.release.xcconfig"; path = "Pods/Target Support Files/Pods-Smack/Pods-Smack.release.xcconfig"; sourceTree = "<group>"; };
@@ -112,7 +118,9 @@
 				2EAA32F0200B3B5700C75AD5 /* RoundedButton.swift */,
 				2E68FACB200C859E00157446 /* AvatarCell.swift */,
 				2EB8B192200D0E6D00F2C0F7 /* CircleImage.swift */,
+				2EDC6FAF2010612E000DCD5F /* KeyboardBoundView.swift */,
 				2EB8B19F200D94F400F2C0F7 /* ChannelCell.swift */,
+				2EDC6FB120106398000DCD5F /* MessageCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -121,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				2EB8B19D200D8E1C00F2C0F7 /* Channel.swift */,
+				2EDC6FAD20105517000DCD5F /* Message.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -346,12 +355,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2EDC6FB02010612F000DCD5F /* KeyboardBoundView.swift in Sources */,
 				2EDC6FAC200EF5CA000DCD5F /* SocketService.swift in Sources */,
 				2EB8B198200D34D300F2C0F7 /* ProfileVC.swift in Sources */,
 				2EB8B1A0200D94F400F2C0F7 /* ChannelCell.swift in Sources */,
 				2E22957820094EBC0061C755 /* ChannelVC.swift in Sources */,
 				2E68FACA200C831500157446 /* AvatarPickerVC.swift in Sources */,
+				2EDC6FB220106398000DCD5F /* MessageCell.swift in Sources */,
 				2EAA32F1200B3B5700C75AD5 /* RoundedButton.swift in Sources */,
+				2EDC6FAE20105517000DCD5F /* Message.swift in Sources */,
 				2EB8B19E200D8E1C00F2C0F7 /* Channel.swift in Sources */,
 				2EB8B193200D0E6D00F2C0F7 /* CircleImage.swift in Sources */,
 				2EB8B19C200D8DF200F2C0F7 /* MessageService.swift in Sources */,
